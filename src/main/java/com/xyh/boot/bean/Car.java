@@ -1,5 +1,9 @@
 package com.xyh.boot.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,41 +18,16 @@ import org.springframework.stereotype.Component;
 * 方法1.@Component + @ConfigurationProperties
 * 方法2.@EnableConfigurationProperties + @ConfigurationProperties
 * */
+@ToString
+@Data
+@AllArgsConstructor //全参构造器
+@NoArgsConstructor // 无参构造器
 //@Component  注册到容器中
 @ConfigurationProperties(prefix = "mycar")
 public class Car {
     private String brand;
     private Integer price;
 
-    public Car(String brand, Integer price) {
-        this.brand = brand;
-        this.price = price;
-    }
 
-    public Car() {
-    }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }
