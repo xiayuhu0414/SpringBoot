@@ -1,6 +1,8 @@
 package com.xyh.admin.config;
 
 import com.xyh.admin.interceptor.LoginInterceptor;
+import com.xyh.admin.interceptor.RedisUrlCountInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +26,14 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 @Configuration
 public class AdminWebConfig implements WebMvcConfigurer {
 
+    /**
+     * Filter、Interceptor 几乎拥有相同的功能？
+     * 1、Filter是Servlet定义的原生组件。好处，脱离Spring应用也能使用
+     * 2、Interceptor是Spring定义的接口。可以使用Spring的自动装配等功能
+     *
+     */
+    @Autowired
+    RedisUrlCountInterceptor redisUrlCountInterceptor;
 
     //定义静态资源行为
   /*  @Override
@@ -40,7 +50,10 @@ public class AdminWebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")//所有请求都被拦截包括静态资源
                 .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**",
-                        "/js/**","/static/**","/aa/**","/sql","/city");//放行的请求
+                        "/js/**","/static/**","/aa/**","actuator/**");//放行的请求
+        registry.addInterceptor(redisUrlCountInterceptor).addPathPatterns("/**")
+                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**",
+                        "/js/**","/static/**","/aa/**","actuator/**");
     }
 
     /*@Bean

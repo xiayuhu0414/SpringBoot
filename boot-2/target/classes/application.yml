@@ -1,6 +1,7 @@
 # yaml表示以上对象
 person:
   userName: zhangsan
+  #  双引号不会对字符进行转义，单引号会
   boss: false
   birth: 2019/12/12 20:12:33
   age: 18

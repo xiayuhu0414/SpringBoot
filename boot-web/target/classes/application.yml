@@ -6,3 +6,6 @@ spring:
   resources:
     # 静态资源路径
     static-locations: [classpath:/haha/]
+server:
+  servlet:
+    context-path: /word

@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="keywords" content="admin, dashboard, bootstrap, template, flat, modern, theme, responsive, fluid, retina, backend, html5, css, css3">
-  <meta name="description" content="">
-  <meta name="author" content="ThemeBucket">
-  <link rel="shortcut icon" href="#" type="image/png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords"
+          content="admin, dashboard, bootstrap, template, flat, modern, theme, responsive, fluid, retina, backend, html5, css, css3">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>AdminEx 高端自适应后台系统管理界面html源码模板 - </title>
+    <title>AdminEx 高端自适应后台系统管理界面html源码模板 - </title>
 
-  <!--icheck-->
-  <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
-  <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
-  <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
-  <link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
+    <!--icheck-->
+    <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+    <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
+    <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
+    <link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
 
-  <!--dashboard calendar-->
-  <link href="css/clndr.css" rel="stylesheet">
+    <!--dashboard calendar-->
+    <link href="css/clndr.css" rel="stylesheet">
 
-  <!--Morris Chart CSS -->
-  <link rel="stylesheet" href="js/morris-chart/morris.css">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="js/morris-chart/morris.css">
 
     <div th:replace="common :: commonheader"></div>
 </head>
@@ -31,9 +32,9 @@
     <!-- left side start-->
     <div th:replace="common :: #leftmenu"></div>
     <!-- left side end-->
-    
+
     <!-- main content start-->
-    <div class="main-content" >
+    <div class="main-content">
 
         <!-- header section start-->
         <div th:replace="common :: headermenu"></div>
@@ -49,7 +50,7 @@
                 <li>
                     <a href="#">Dashboard</a>
                 </li>
-                <li class="active"> My Dashboard </li>
+                <li class="active"> My Dashboard</li>
             </ul>
             <div class="state-info">
                 <section class="panel">
@@ -86,8 +87,8 @@
                                     <i class="fa fa-gavel"></i>
                                 </div>
                                 <div class="state-value">
-                                    <div class="value">230</div>
-                                    <div class="title">New Order</div>
+                                    <div class="value" th:text="${indexCount}">230</div>
+                                    <div class="title">/main.html</div>
                                 </div>
                             </div>
                         </div>
@@ -97,8 +98,8 @@
                                     <i class="fa fa-tags"></i>
                                 </div>
                                 <div class="state-value">
-                                    <div class="value">3490</div>
-                                    <div class="title">Copy Sold</div>
+                                    <div class="value" th:text="${sqlCount}">3490</div>
+                                    <div class="title">/sql</div>
                                 </div>
                             </div>
                         </div>
@@ -230,14 +231,16 @@
                             <ul class="goal-progress">
                                 <li>
                                     <div class="prog-avatar">
-                                        <img src="../static/images/photos/user1.png" alt=""/>
+                                        <img src="images/photos/user1.png" alt=""/>
                                     </div>
                                     <div class="details">
                                         <div class="title">
                                             <a href="#">John Doe</a> - Project Lead
                                         </div>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                            <div class="progress-bar progress-bar-info" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 70%">
                                                 <span class="">70%</span>
                                             </div>
                                         </div>
@@ -245,14 +248,16 @@
                                 </li>
                                 <li>
                                     <div class="prog-avatar">
-                                        <img src="../static/images/photos/user2.png" alt=""/>
+                                        <img src="images/photos/user2.png" alt=""/>
                                     </div>
                                     <div class="details">
                                         <div class="title">
                                             <a href="#">Cameron Doe</a> - Sales
                                         </div>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 91%">
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 91%">
                                                 <span class="">91%</span>
                                             </div>
                                         </div>
@@ -260,14 +265,16 @@
                                 </li>
                                 <li>
                                     <div class="prog-avatar">
-                                        <img src="../static/images/photos/user3.png" alt=""/>
+                                        <img src="images/photos/user3.png" alt=""/>
                                     </div>
                                     <div class="details">
                                         <div class="title">
                                             <a href="#">Hoffman Doe</a> - Support
                                         </div>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 40%">
                                                 <span class="">40%</span>
                                             </div>
                                         </div>
@@ -275,14 +282,16 @@
                                 </li>
                                 <li>
                                     <div class="prog-avatar">
-                                        <img src="../static/images/photos/user4.png" alt=""/>
+                                        <img src="images/photos/user4.png" alt=""/>
                                     </div>
                                     <div class="details">
                                         <div class="title">
                                             <a href="#">Jane Doe</a> - Marketing
                                         </div>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 20%">
                                                 <span class="">20%</span>
                                             </div>
                                         </div>
@@ -290,14 +299,16 @@
                                 </li>
                                 <li>
                                     <div class="prog-avatar">
-                                        <img src="../static/images/photos/user5.png" alt=""/>
+                                        <img src="images/photos/user5.png" alt=""/>
                                     </div>
                                     <div class="details">
                                         <div class="title">
                                             <a href="#">Hoffman Doe</a> - Support
                                         </div>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                 style="width: 45%">
                                                 <span class="">45%</span>
                                             </div>
                                         </div>
@@ -485,7 +496,8 @@
                                 <div class="col-md-12">
                                     <form role="form" class="form-inline">
                                         <div class="form-group todo-entry">
-                                            <input type="text" placeholder="Enter your ToDo List" class="form-control" style="width: 100%">
+                                            <input type="text" placeholder="Enter your ToDo List" class="form-control"
+                                                   style="width: 100%">
                                         </div>
                                         <button class="btn btn-primary pull-right" type="submit">+</button>
                                     </form>
@@ -500,15 +512,15 @@
                             <h3>19 Februay 2020</h3>
 
                             <p>AdminEx is new model of admin
-                            dashboard <a href="网站模板">网站模板</a>
-                            4 days ago by John Doe</p>
+                                dashboard <a href="网站模板">网站模板</a>
+                                4 days ago by John Doe</p>
                         </div>
                     </div>
                     <div class="panel">
                         <div class="panel-body">
                             <div class="media usr-info">
                                 <a href="#" class="pull-left">
-                                    <img class="thumb" src="../static/images/photos/user2.png" alt=""/>
+                                    <img class="thumb" src="images/photos/user2.png" alt=""/>
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">Mila Watson</h4>
@@ -550,37 +562,36 @@
 <div th:replace="common :: #commonscript"></div>
 
 <!--easy pie chart-->
-<script src="../static/js/easypiechart/jquery.easypiechart.js"></script>
-<script src="../static/js/easypiechart/easypiechart-init.js"></script>
+<script src="js/easypiechart/jquery.easypiechart.js"></script>
+<script src="js/easypiechart/easypiechart-init.js"></script>
 
 <!--Sparkline Chart-->
-<script src="../static/js/sparkline/jquery.sparkline.js"></script>
-<script src="../static/js/sparkline/sparkline-init.js"></script>
+<script src="js/sparkline/jquery.sparkline.js"></script>
+<script src="js/sparkline/sparkline-init.js"></script>
 
 <!--icheck -->
-<script src="../static/js/iCheck/jquery.icheck.js"></script>
-<script src="../static/js/icheck-init.js"></script>
+<script src="js/iCheck/jquery.icheck.js"></script>
+<script src="js/icheck-init.js"></script>
 
 <!-- jQuery Flot Chart-->
-<script src="../static/js/flot-chart/jquery.flot.js"></script>
-<script src="../static/js/flot-chart/jquery.flot.tooltip.js"></script>
-<script src="../static/js/flot-chart/jquery.flot.resize.js"></script>
+<script src="js/flot-chart/jquery.flot.js"></script>
+<script src="js/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="js/flot-chart/jquery.flot.resize.js"></script>
 
 
 <!--Morris Chart-->
-<script src="../static/js/morris-chart/morris.js"></script>
-<script src="../static/js/morris-chart/raphael-min.js"></script>
+<script src="js/morris-chart/morris.js"></script>
+<script src="js/morris-chart/raphael-min.js"></script>
 
 <!--Calendar-->
-<script src="../static/js/calendar/clndr.js"></script>
-<script src="../static/js/calendar/evnt.calendar.init.js"></script>
-<script src="../static/js/calendar/moment-2.2.1.js"></script>
+<script src="js/calendar/clndr.js"></script>
+<script src="js/calendar/evnt.calendar.init.js"></script>
+<script src="js/calendar/moment-2.2.1.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
 
-
 <!--Dashboard Charts-->
-<script src="../static/js/dashboard-chart-init.js"></script>
+<script src="js/dashboard-chart-init.js"></script>
 
 
 </body>

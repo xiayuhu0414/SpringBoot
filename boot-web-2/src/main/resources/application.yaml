@@ -4,7 +4,14 @@ spring:
     username: root
     password: 253261
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+        instance:
+          prefer-ip: true
+  application:
+    name: boot
     druid:
       aop-patterns: com.xyh.admin.* #springbean监控
       filters: stat,wall,slf4j #所有开启的功能
@@ -30,10 +37,20 @@ spring:
         url-pattern: /*
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
 
+
   #   type:
-  jdbc:
-    template:
-      query-timeout: 3
+  redis:
+    host: 192.168.19.129
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0
+
 
 
 
@@ -43,4 +60,33 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   configuration: # 指定mybatis全局配置文件中的相关配置项
     map-underscore-to-camel-case: true #驼峰命名
+
+
+
+# management 是所有actuator的配置
+# management.endpoint.端点名.xxxx  对某个端点的具体配置
+management:
+  endpoints:
+    enabled-by-default: true  #默认开启所有监控端点  true
+    web:
+      exposure:
+        include: '*' # 以web方式暴露所有端点
+
+  endpoint:   #对某个端点的具体配置
+    health:
+      show-details: always
+      enabled: true
+
+    info:
+      enabled: true
+
+    beans:
+      enabled: true
+
+    metrics:
+      enabled: true
+
+
+
+
 

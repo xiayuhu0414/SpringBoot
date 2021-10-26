@@ -5,8 +5,13 @@ import com.xyh.admin.bean.City;
 import com.xyh.admin.bean.User;
 import com.xyh.admin.service.AccountService;
 import com.xyh.admin.service.CityService;
+import com.xyh.admin.service.impl.AccountServiceImpl;
+import com.xyh.admin.service.impl.CityServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +37,8 @@ public class IndexController {
     AccountService accountService;
     @Autowired
     CityService cityService;
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     @PostMapping("/city")
     @ResponseBody
@@ -93,7 +100,14 @@ public class IndexController {
             model.addAttribute("msg","请重新登录！");
             return "login";
         }
+
 */
-      return "index";
+        ValueOperations<String,String> opsForValue= redisTemplate.opsForValue();
+        String s = opsForValue.get("/index.html");
+        String s1 = opsForValue.get("/sql");
+
+        model.addAttribute("indexCount",s);
+        model.addAttribute("sqlCount",s1);
+        return "index";
     }
 }
